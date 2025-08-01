@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Api\GpsReceiverController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GpsstoreController;
+use App\Http\Controllers\Api\GpsReceiverController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/receiver', [GpsReceiverController::class, 'receive']);
+Route::post('/gps/store', [GpsstoreController::class, 'store']);
